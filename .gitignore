@@ -1,0 +1,13 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Maven
+target/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Não ignorar docs/: a documentação JavaDoc gerada será versionada conforme a atividade.
