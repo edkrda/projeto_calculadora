@@ -13,6 +13,9 @@ package calculadora;
  */
 public class Calculadora {
 
+    /** Armazena o resultado da última operação concluída com sucesso. */
+    private int r;
+
     /**
      * Executa uma operação aritmética entre dois números inteiros.
      *
@@ -20,8 +23,8 @@ public class Calculadora {
      * @param b segundo número da operação
      * @param op operador: {@code +}, {@code -}, {@code *} ou {@code /}
      * @return resultado inteiro da operação
-     * @throws IllegalArgumentException se o operador for inválido ou nulo
-     * @throws ArithmeticException se houver divisão por zero
+     * @throws IllegalArgumentException se o operador for inválido ou nulo,
+     *                                  ou se houver divisão por zero
      */
     public int calc(int a, int b, String op) {
         if (op == null) {
@@ -30,70 +33,67 @@ public class Calculadora {
             );
         }
 
+        int resultado;
+
         switch (op) {
             case "+":
-                return somar(a, b);
+                resultado = somar(a, b);
+                break;
             case "-":
-                return subtrair(a, b);
+                resultado = subtrair(a, b);
+                break;
             case "*":
-                return multiplicar(a, b);
+                resultado = multiplicar(a, b);
+                break;
             case "/":
-                return dividir(a, b);
+                resultado = dividir(a, b);
+                break;
             default:
                 throw new IllegalArgumentException(
                         "Operação inválida: use +, -, * ou /."
                 );
         }
+
+        r = resultado;
+        return r;
     }
 
-    /**
-     * Soma dois números inteiros.
-     *
-     * @param a primeiro número
-     * @param b segundo número
-     * @return resultado da soma
-     */
+    /** @return resultado da soma */
     private int somar(int a, int b) {
         return a + b;
     }
 
-    /**
-     * Subtrai o segundo número do primeiro.
-     *
-     * @param a primeiro número
-     * @param b segundo número
-     * @return resultado da subtração
-     */
+    /** @return resultado da subtração */
     private int subtrair(int a, int b) {
         return a - b;
     }
 
-    /**
-     * Multiplica dois números inteiros.
-     *
-     * @param a primeiro número
-     * @param b segundo número
-     * @return resultado da multiplicação
-     */
+    /** @return resultado da multiplicação */
     private int multiplicar(int a, int b) {
         return a * b;
     }
 
     /**
-     * Divide o primeiro número pelo segundo.
+     * Realiza uma divisão inteira.
      *
-     * @param a dividendo
-     * @param b divisor
-     * @return resultado inteiro da divisão
-     * @throws ArithmeticException se o divisor for zero
+     * @throws IllegalArgumentException se o divisor for zero
      */
     private int dividir(int a, int b) {
         if (b == 0) {
-            throw new ArithmeticException(
+            throw new IllegalArgumentException(
                     "Não é possível dividir por zero."
             );
         }
 
         return a / b;
+    }
+
+    /**
+     * Retorna o resultado da última operação concluída com sucesso.
+     *
+     * @return último resultado calculado; inicialmente, zero
+     */
+    public int getR() {
+        return r;
     }
 }
