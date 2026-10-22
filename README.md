@@ -8,13 +8,13 @@
 
 - **Projeto:** Projeto Calculadora
 - **Contexto:** FinançApp
-- **Aluno:** Preencha com seu nome
-- **RA:** Preencha com seu RA
+- **Aluno:** Eduarda de Almeida Miranda
+- **RA:** 249607
 - **Curso:** Análise e Desenvolvimento de Sistemas
-- **Disciplina:** Preencha com o nome da disciplina
-- **Professor:** Preencha com o nome do professor
+- **Disciplina:** UX/UI e Testes de Software
+- **Professor:** Daniel Ohata
 - **Semestre:** 2026.2
-- **Repositório GitHub:** `COLE_AQUI_O_LINK_DO_REPOSITORIO`
+- **Repositório GitHub:**  https://github.com/edkrda/projeto_calculadora
 
 ## 2. Visão Geral
 
@@ -128,11 +128,9 @@ A classe `TesteCalculadora` verifica:
 
 ### Evidência da execução dos testes
 
-**Substitua a imagem abaixo por um print real do IntelliJ IDEA mostrando os testes aprovados.** Salve a imagem em `images/testes/testes-aprovados.png` e mantenha a referência abaixo.
 
-![Print da execução dos testes unitários](images/testes/testes-aprovados.png)
+![Print da execução dos testes unitários](images/testes/testes-aprovado1.png)
 
-Se ainda não houver print, execute `mvn clean test`, abra o resultado dos testes no IntelliJ e capture a tela. Não entregue a imagem de exemplo como se fosse uma execução real.
 
 ## 9. Processo de Refatoração
 
@@ -182,10 +180,21 @@ mvn javadoc:javadoc -DreportOutputDirectory=docs
 Se a versão do plugin ou a configuração local não respeitar o diretório informado, consulte o resultado exibido pelo Maven e ajuste o caminho de saída. Abra o arquivo `index.html` gerado no navegador para conferir a documentação.
 
 ### Evidência da documentação JavaDoc
+**Imagem 1 — Página inicial da documentação JavaDoc**
 
-Capture um print real do navegador com a documentação aberta e salve em `images/javadoc/javadoc-index.png`.
+![Página inicial da documentação JavaDoc](images/javadoc/javadoc1.png)
 
-![Print da documentação JavaDoc](images/javadoc/javadoc-index.png)
+**Imagem 2 — Documentação da classe Calculadora**
+
+![Documentação da classe Calculadora](images/javadoc/javadoc2.png)
+
+**Imagem 3 — Documentação dos métodos**
+
+![Documentação dos métodos](images/javadoc/javadoc3.png)
+
+**Imagem 4 — Detalhes da documentação**
+
+![Detalhes da documentação JavaDoc](images/javadoc/javadoc4.png)
 
 ## 11. Versionamento com Git e GitHub
 
@@ -194,18 +203,6 @@ O repositório deve conter pelo menos as branches:
 - `main`: versão principal do projeto;
 - `Refatoracao`: versão refatorada, com testes repetidos e documentação atualizada.
 
-Exemplo de sequência de commits:
-
-```text
-docs: adiciona README inicial
-feat: implementa operações básicas da calculadora
-test: adiciona testes unitários das operações
-refactor: organiza lógica e tratamento de erros
-docs: adiciona comentários JavaDoc
-docs: registra evidências de testes e JavaDoc
-```
-
-Os nomes acima são exemplos. Os commits reais devem corresponder às alterações realizadas. Consulte o histórico do repositório para confirmar a sequência.
 
 ## 12. Conclusão
 
@@ -213,21 +210,6 @@ A atividade reúne conceitos essenciais de desenvolvimento de software: implemen
 
 ## 13. Repositório
 
-**Link do GitHub:** `COLE_AQUI_O_LINK_DO_REPOSITORIO`
+**Link do GitHub:** https://github.com/edkrda/projeto_calculadora
 
-Antes da entrega, substitua esse texto pelo endereço real do seu repositório público ou pelo endereço autorizado pelo professor.
 
----
-
-## Checklist de Entrega
-
-- [ ] Projeto compila sem erros.
-- [ ] Testes unitários executados e aprovados.
-- [ ] Branch `main` criada e publicada.
-- [ ] Branch `Refatoracao` criada e publicada.
-- [ ] Commits organizados e coerentes com as alterações.
-- [ ] JavaDoc gerado e conferido no navegador.
-- [ ] Print real dos testes adicionado ao README.
-- [ ] Print real da documentação JavaDoc adicionado ao README.
-- [ ] Print do histórico da refatoração adicionado ao README.
-- [ ] Nome, RA, disciplina, professor e link do GitHub preenchidos.
