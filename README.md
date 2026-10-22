@@ -153,9 +153,7 @@ mvn clean test
 
 ### Evidência da refatoração
 
-Salve um print real do histórico do Git mostrando a branch `Refatoracao` e os commits correspondentes em `images/refatoracao/`.
 
-![Print do histórico de commits da refatoração](images/refatoracao/historico-commits.png)
 
 ## 10. Documentação JavaDoc
 
