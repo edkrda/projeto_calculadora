@@ -1,20 +1,17 @@
+
 package calculadora;
 
 /**
  * Realiza operações aritméticas básicas para o módulo financeiro do FinançApp.
  *
- * <p>A classe aceita dois números inteiros e um operador. Os operadores
- * permitidos são {@code +}, {@code -}, {@code *} e {@code /}. Se o operador
- * for inválido ou houver tentativa de divisão por zero, o método informa
- * o problema por meio de uma exceção {@link IllegalArgumentException}.</p>
+ * <p>A classe aceita dois números inteiros e um operador.
+ * Os operadores permitidos são {@code +}, {@code -},
+ * {@code *} e {@code /}.</p>
  *
  * @author Nome do aluno
- * @version 1.0
+ * @version 2.0
  */
 public class Calculadora {
-
-    /** Armazena o resultado da última operação concluída com sucesso. */
-    private int r;
 
     /**
      * Executa uma operação aritmética entre dois números inteiros.
@@ -23,8 +20,8 @@ public class Calculadora {
      * @param b segundo número da operação
      * @param op operador: {@code +}, {@code -}, {@code *} ou {@code /}
      * @return resultado inteiro da operação
-     * @throws IllegalArgumentException se o operador for inválido ou se
-     *                                  houver divisão por zero
+     * @throws IllegalArgumentException se o operador for inválido ou nulo
+     * @throws ArithmeticException se houver divisão por zero
      */
     public int calc(int a, int b, String op) {
         if (op == null) {
@@ -35,37 +32,68 @@ public class Calculadora {
 
         switch (op) {
             case "+":
-                r = a + b;
-                break;
+                return somar(a, b);
             case "-":
-                r = a - b;
-                break;
+                return subtrair(a, b);
             case "*":
-                r = a * b;
-                break;
+                return multiplicar(a, b);
             case "/":
-                if (b == 0) {
-                    throw new IllegalArgumentException(
-                            "Não é possível dividir por zero."
-                    );
-                }
-                r = a / b;
-                break;
+                return dividir(a, b);
             default:
                 throw new IllegalArgumentException(
                         "Operação inválida: use +, -, * ou /."
                 );
         }
-
-        return r;
     }
 
     /**
-     * Retorna o resultado da última operação concluída com sucesso.
+     * Soma dois números inteiros.
      *
-     * @return último resultado calculado; inicialmente, zero
+     * @param a primeiro número
+     * @param b segundo número
+     * @return resultado da soma
      */
-    public int getR() {
-        return r;
+    private int somar(int a, int b) {
+        return a + b;
+    }
+
+    /**
+     * Subtrai o segundo número do primeiro.
+     *
+     * @param a primeiro número
+     * @param b segundo número
+     * @return resultado da subtração
+     */
+    private int subtrair(int a, int b) {
+        return a - b;
+    }
+
+    /**
+     * Multiplica dois números inteiros.
+     *
+     * @param a primeiro número
+     * @param b segundo número
+     * @return resultado da multiplicação
+     */
+    private int multiplicar(int a, int b) {
+        return a * b;
+    }
+
+    /**
+     * Divide o primeiro número pelo segundo.
+     *
+     * @param a dividendo
+     * @param b divisor
+     * @return resultado inteiro da divisão
+     * @throws ArithmeticException se o divisor for zero
+     */
+    private int dividir(int a, int b) {
+        if (b == 0) {
+            throw new ArithmeticException(
+                    "Não é possível dividir por zero."
+            );
+        }
+
+        return a / b;
     }
 }
